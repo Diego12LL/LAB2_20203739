@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Indicacionesview extends AppCompatActivity {
+public class IndicacionesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +17,7 @@ public class Indicacionesview extends AppCompatActivity {
         buttonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Indicacionesview.this, Calcularview.class);
+                Intent intent = new Intent(IndicacionesActivity.this, CalcularActivity.class);
                 startActivity(intent);
             }
         });

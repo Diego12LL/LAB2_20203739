@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Calcularview extends AppCompatActivity implements View.OnClickListener{
+public class CalcularActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView textViewScreen;
     private TextView textViewOperation;
     private TextView textViewResult;

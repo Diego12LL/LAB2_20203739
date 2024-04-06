@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CalcularActivity">
 
-    <!-- Fila A: Operación actual -->
     <View
         android:id="@+id/backgroundView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/textViewApp"
         android:layout_alignBottom="@id/textViewApp"
-        android:background="@color/colorGray" />
+        android:background="@color/color3" />
 
     <TextView
         android:id="@+id/textViewApp"
@@ -28,35 +30,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:textAlignment="center"
+        android:textAlignment="viewEnd"
         android:layout_marginTop="16dp"
         android:layout_above="@+id/textViewResult" />
 
-    <!-- Fila B: Resultado -->
+
     <TextView
         android:id="@+id/textViewResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:textAlignment="center"
+        android:textAlignment="viewEnd"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="0"
         android:layout_above="@+id/textViewScreen" />
 
-    <!-- Pantalla de la calculadora -->
+
     <TextView
         android:id="@+id/textViewScreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:textAlignment="center"
+        android:textAlignment="viewEnd"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="0"
         android:layout_above="@+id/row1" />
 
-    <!-- Fila 1 de botones -->
+
     <LinearLayout
         android:id="@+id/row1"
         android:layout_width="match_parent"
@@ -169,9 +171,7 @@
             android:layout_height="wrap_content"
             android:text="*" />
     </LinearLayout>
-    <!-- Agrega más filas para los demás botones (números y operadores) -->
 
-    <!-- Última fila de botones -->
     <LinearLayout
         android:id="@+id/rowLast"
         android:layout_width="match_parent"

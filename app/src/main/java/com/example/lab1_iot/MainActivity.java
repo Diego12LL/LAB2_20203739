@@ -1,15 +1,12 @@
 package com.example.lab1_iot;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.widget.Button;
@@ -21,14 +18,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textViewTeleMath = findViewById(R.id.textView2);
-        registerForContextMenu(textViewTeleMath);
+        final int[] colores = {R.color.color1, R.color.color2, R.color.color3};
+
+        final int[] colorIndex = {0};
+
+        TextView textView = findViewById(R.id.textView2);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setTextColor(getResources().getColor(colores[colorIndex[0]]));
+
+                colorIndex[0]++;
+
+                if (colorIndex[0] >= colores.length) {
+                    colorIndex[0] = 0;
+                }
+            }
+        });
 
         Button buttonIndicaciones = findViewById(R.id.button);
         buttonIndicaciones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Indicacionesview.class);
+                Intent intent = new Intent(MainActivity.this, IndicacionesActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         buttonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Calcularview.class);
+                Intent intent = new Intent(MainActivity.this, CalcularActivity.class);
                 startActivity(intent);
             }
         });
